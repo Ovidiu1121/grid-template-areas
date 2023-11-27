@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.grid>* {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.header1 {
+    grid-area: head1;
+    background-color: #19719e;
+}
+
+nav {
+    grid-area: nav;
+    background-color: rgb(207, 204, 32);
+}
+
+aside {
+    grid-area: aside;
+    background-color: rgb(241, 119, 119);
+}
+
+main {
+    grid-area: main;
+    background-color: #3acaca;
+}
+
+article {
+    grid-area: article;
+    background-color: #8494a4;
+}
+
+.news {
+    grid-area: news;
+    background-color: rgb(162, 206, 97);
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgba(183, 55, 158, 0.968);
+}
+
+.grid {
+
+    height: 100vh;
+    display: grid;
+    grid-gap: 5px;
+
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr 3.5fr 1fr 1fr 0.5fr;
+
+    grid-template-areas:
+        "head1 head1 head1"
+        "nav nav nav"
+        "main main aside"
+        "article news news"
+        "article news news"
+        "footer footer footer";
+}
+
+@media(min-width:350px) {
+
+    .header2 {
+        grid-area: head2;
+        background-color: #447f9d;
+    }
+
+    .grid {
+
+        height: 100vh;
+        display: grid;
+        grid-gap: 5px;
+
+        grid-template-rows: 100px;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.7fr 1.7fr 0.5fr;
+
+
+        grid-template-areas:
+            "head1 head1 head2 head2 head2 head2"
+            "nav nav nav main main main"
+            "aside news news main main main"
+            "aside article article main main main"
+            "footer footer footer footer footer footer";
+    }
+
+}
+
+@media(min-width:1000px) {
+
+    .grid {
+
+        height: 100vh;
+        display: grid;
+        grid-gap: 5px;
+
+        grid-template-rows: 100px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 1.7fr 1.7fr 0.6fr;
+
+
+        grid-template-areas:
+            "head1 head1 head2 head2 head2 head2"
+            "nav nav nav nav nav aside"
+            "main main main article article aside"
+            "main main main news news aside"
+            "footer footer footer footer footer footer";
+    }
+}
